@@ -1,9 +1,9 @@
 # Official Implementation of “CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding” (CVPR 2025)
 
-<p align="left"><img src="imgs/intro.png" alt="outline" width="95%"></p>
+<p align="left"><img src="imgs/overview.png" alt="outline" width="95%"></p>
 
 > [Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding (CUA-O3D)](https://tyroneli.github.io/CUA_O3D/) <br>
-> [Jinlong Li](https://tyroneli.github.io), Zequn Jie, Xu Wang, Xiaolin Wei, [Lin Ma](https://forestlinma.com). <br>
+> [Jinlong Li](https://tyroneli.github.io), [Cristiano Saltori](https://scholar.google.com/citations?user=PID7Z4oAAAAJ), [Fabio Poiesi](https://fabiopoiesi.github.io/), [Nicu Sebe](https://scholar.google.co.uk/citations?user=stFCYOAAAAAJ&hl=en). <br>
 > :star: CVPR 2025
 
 ## About CUA-O3D
