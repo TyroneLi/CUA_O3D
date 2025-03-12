@@ -8,7 +8,7 @@ Welcome to the official repository for **CUA-O3D (Cross-Modal and Uncertainty-Aw
 - Dense captioning
 - Semantic understanding
 
-Visit the [CUA-O3D website](https://tyroneli.github.io/CUA-O3D) to explore more details about the project, methodology, and results.
+Visit the [CUA-O3D website](https://tyroneli.github.io/CUA_O3D) to explore more details about the project, methodology, and results.
 
 
 ## Contributing
