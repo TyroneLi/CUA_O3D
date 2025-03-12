@@ -3,7 +3,7 @@
 Welcome to the official repository for **CUA-O3D (Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding)**! This repository hosts the source code, documentation, and resources for the [CUA-O3D project](https://tyroneli.github.io/CUA_O3D/).
 
 ## About CUA-O3D
-**CUA-O3D** is a cutting-edge framework designed to integrate **3D perception** with **natural language understanding**, enabling advanced scene comprehension and interaction capabilities. By leveraging innovative algorithms and models, CUA-O3D bridges the gap between 3D spatial data and language processing to provide state-of-the-art performance in tasks such as:
+**CUA-O3D** The lack of a large-scale 3D-text corpus has led recent works to distill open-vocabulary knowledge from vision-language models (VLMs). However, these methods typically rely on a single VLM to align the feature spaces of 3D models within a common language space, which limits the potential of 3D models to leverage the diverse spatial and semantic capabilities encapsulated in various foundation models. In this paper, we propose Cross-modal and Uncertainty-aware Agglomeration for Open-vocabulary 3D Scene Understanding dubbed CUA-O3D, the first model to integrate multiple foundation models—such as CLIP, DINOv2, and Stable Diffusion—into 3D scene understanding. We further introduce a deterministic uncertainty estimation to adaptively distill and harmonize the heterogeneous 2D feature embeddings from these models. Our method addresses two key challenges: (1) incorporating semantic priors from VLMs alongside the geometric knowledge of spatially-aware vision foundation models, and (2) using a novel deterministic uncertainty estimation to capture model-specific uncertainties across diverse semantic and geometric sensitivities, helping to reconcile heterogeneous representations during training. Extensive experiments on ScanNetV2 and Matterport3D demonstrate that our method not only advances open-vocabulary segmentation but also achieves robust cross-domain alignment and competitive spatial perception capabilities so as to provide state-of-the-art performance in tasks such as:
 - 3D question answering
 - Dense captioning
 - Semantic understanding
@@ -25,8 +25,8 @@ We extend our gratitude to all contributors and supporters of the CUA-O3D projec
 ## Contact
 For questions, issues, or collaboration opportunities:
 - Submit a ticket on the [issues page](https://github.com/tyroneli/CUA-O3D/issues).
-- Visit the [CUA-O3D project website](https://tyroneli.github.io/CUA-O3D/).
-- Alternatively, reach out via email: [gmei@fbk.eu](mailto:gmei@fbk.eu).
+- Visit the [CUA-O3D project website](https://tyroneli.github.io/CUA_O3D/).
+- Alternatively, reach out via email: [jinlong.li@unitn.it](mailto:jinlong.li@unitn.it).
 
 ## Quick Links
 - [CUA-O3D Website](https://tyroneli.github.io/CUA-O3D/)
