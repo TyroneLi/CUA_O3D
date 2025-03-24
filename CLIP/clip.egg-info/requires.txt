@@ -1,0 +1,9 @@
+ftfy
+packaging
+regex
+tqdm
+torch
+torchvision
+
+[dev]
+pytest
