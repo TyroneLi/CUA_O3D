@@ -1,6 +1,6 @@
 # Official Implementation of “CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding” (CVPR 2025)
 
-<p align="left"><img src="imgs/overview.png" alt="outline" width="95%"></p>
+<p align="left"><img src="imgs/overview.png" alt="outline" width="65%"></p>
 
 <p align="left"><img src="imgs/method.png" alt="outline" width="95%"></p>
 
