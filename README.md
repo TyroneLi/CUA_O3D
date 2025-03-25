@@ -17,13 +17,9 @@ The lack of a large-scale 3D-text corpus has led recent works to distill open-vo
 Visit the [CUA-O3D website](https://tyroneli.github.io/CUA_O3D) to explore more details about the project, methodology, and results.
 
 
-## Contributing
-We welcome and encourage contributions to the CUA-O3D project! If you'd like to contribute:
-1. Fork this repository.
-2. Create a new branch for your changes.
-3. Submit a pull request with a detailed description of your modifications.
-
-Before contributing, please review our [contribution guidelines](https://github.com/tyroneli/CUA-O3D/blob/main/CONTRIBUTING.md).
+## Todo List
+- [ ] 2D feature extraction release
+- [ ] distillation training release
 
 ## Acknowledgments
 We extend our gratitude to all contributors and supporters of the CUA-O3D project. Your valuable insights and contributions drive innovation and progress in the field of **3D and language-based AI systems**.
