@@ -1,1 +1,3 @@
 ./CLIP
+2D_feature_extraction/embedding_projection/modules/vjepa_ckpts/vitl16.pth.tar
+2D_feature_extraction/embedding_projection/demo_e200.ckpt
