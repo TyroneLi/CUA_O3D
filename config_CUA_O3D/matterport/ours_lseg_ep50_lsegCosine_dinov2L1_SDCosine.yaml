@@ -1,10 +1,6 @@
 DATA:
   data_root: /leonardo_work/IscrC_bal/OV3D/datas/matterport_3d
   data_root_2d_fused_feature: /leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_matterport_lseg
-  # data_root: /leonardo_work/IscrC_bal/OV3D/datas/matterport_3d
-  # data_root_2d_fused_feature: /leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_matterport_lseg
-  # data_root: /mhug/mhug-dataset/jinlong_li_datasets/author_files/matterport_3d
-  # data_root_2d_fused_feature: /mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg
   data_root_2d_fused_feature_dinov2: /mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/dataset_yoda_matterport_noAligned_sameAsLseg_dinov2
   data_root_2d_fused_feature_sd: /mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/dataset_yoda_matterport_noAligned_sameAsLseg_SD
   feature_2d_extractor: lseg

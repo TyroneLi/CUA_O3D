@@ -1,10 +1,6 @@
 DATA:
-  # data_root: /home/jinlong.li/codebase/openSet_3D/openscene_preECCV24/data/scannet_3d
-  # data_root_2d_fused_feature: /mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/re_my_extraction_scannet_lseg
-  # data_root_2d_fused_feature_dinov2: /mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/re_my_extraction_scannet_lseg
   data_root: /leonardo_work/IscrC_bal/OV3D/datas/scannet_3d
   data_root_2d_fused_feature: /leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg
-  # data_root_2d_fused_feature_dinov2: /leonardo_work/IscrC_GMAM/lijinlong_openSet_3D_datas/lexicon_3d_feats/dinov2_not_aligned_sameAsOld
   data_root_2d_fused_feature_dinov2: /leonardo_work/IscrC_OVUD/another_lexicon_3d_feats_path/dinov2_not_aligned_sameAsOld
   data_root_2d_fused_feature_sd: /leonardo_work/IscrC_GMAM/lijinlong_openSet_3D_datas/lexicon_3d_feats/sd_not_aligned_sameAsOld
   data_root_2d_fused_feature_amradio: /leonardo_scratch/fast/IscrC_GMAM/temp_save_path/scannet_marzola_noAligned_AMRADIO
