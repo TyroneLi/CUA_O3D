@@ -94,11 +94,11 @@ CUA_O3D
 │   │   ├── scans_test
 ```
 
-Pre-process ScanNet data
+Pre-process ScanNet data from 2d multi-view images by adopting Lseg, DINOv2 and Stable Diffusion models.
 
 ```
-cd data/scannet/
-python batch_load_scannet_data.py
+cd 2D_feature_extraction/
+
 ```
 
 ## 3. 2D feature embedding extraction
