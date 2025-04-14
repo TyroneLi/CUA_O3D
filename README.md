@@ -76,39 +76,40 @@ The following installation suppose `python=3.8` `pytorch=1.7.1` and `cuda=11.x`.
 
 ### ScanNet v2 dataset
 
-    Download the [ScanNet](http://www.scan-net.org/) v2 dataset.
+Download the [ScanNet](http://www.scan-net.org/) v2 dataset.
 
-    Put the downloaded `scans` and `scans_test` folder as follows.
+Put the downloaded `scans` and `scans_test` folder as follows.
 
-    ```
-    CUA_O3D
-    ├── data
-    │   ├── scannet
-    │   │   ├── scans
-    │   │   ├── scans_test
-    ```
+```
+CUA_O3D
+├── data
+│   ├── scannet
+│   │   ├── scans
+│   │   ├── scans_test
+```
 
-    Pre-process ScanNet data
+Pre-process ScanNet data
 
-    ```
-    cd data/scannet/
-    python batch_load_scannet_data.py
+```
+cd data/scannet/
+python batch_load_scannet_data.py
+```
 
 ## 2D feature embedding extraction
 
-    We evaluate the method while training.
+We evaluate the method while training.
 
-    ```
-    sh scripts/train.sh
-    ```
+```
+sh scripts/train.sh
+```
 
 ## 3D distillation training
 
-    We evaluate the method while training.
+We evaluate the method while training.
 
-    ```
-    sh scripts/train.sh
-    ```
+```
+sh scripts/train.sh
+```
 
 ## Evaluation
 
