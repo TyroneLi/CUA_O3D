@@ -130,11 +130,11 @@ sh scripts/train.sh
 If you use our work in your research, please cite our publication:
 ```bibtex
 @article{li2025cross,
-          title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
-          author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
-          journal={arXiv preprint arXiv:2503.16707},
-          year={2025}
-        }
+    title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
+    author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
+    journal={arXiv preprint arXiv:2503.16707},
+    year={2025}
+}
 ```
 
 ## Acknowledgments
