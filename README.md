@@ -5,7 +5,7 @@
 <a href="https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a> ·
 <a href="https://scholar.google.com/citations?user=stFCYOAAAAAJ&hl=en" style="color:blue;">Nicu Sebe</a>
 
-[:star: **CVPR 2025**] [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
+[⭐️ **CVPR 2025**] [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
 
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![arXiv](https://img.shields.io/badge/arXiv-2503.16707-A42C25?style=flat&logo=arXiv&logoColor=A42C25)](https://arxiv.org/abs/2503.16707) [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://tyroneli.github.io/CUA_O3D/) [![GitHub](https://img.shields.io/badge/GitHub-Code-black?style=flat&logo=github&logoColor=white)](https://github.com/TyroneLi/CUA_O3D) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
@@ -85,6 +85,17 @@ For questions, issues, or collaboration opportunities:
 - [CUA-O3D Website](https://tyroneli.github.io/CUA-O3D/)
 - [CUA-O3D Code Repository](https://github.com/tyroneli/CUA-O3D)
 - [CUA-O3D Paper on arXiv](https://arxiv.org/abs/2411.19774)
+
+## BibTeX
+If you use our work in your research, please cite our publication:
+```bibtex
+@article{li2025cross,
+          title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
+          author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
+          journal={arXiv preprint arXiv:2503.16707},
+          year={2025}
+        }
+```
 
 
 ## Website License
