@@ -66,7 +66,10 @@ The following installation suppose `python=3.8` `pytorch=1.7.1` and `cuda=11.x`.
      ```
   3. Install MinkowskiEngine from scratch
     ```
-     
+     conda install openblas-devel -c anaconda
+     git clone https://github.com/NVIDIA/MinkowskiEngine.git
+     cd MinkowskiEngine
+     python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
      ```
 
 
