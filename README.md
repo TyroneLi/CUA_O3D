@@ -1,5 +1,5 @@
 <div align="center">
-# CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding
+CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding
 
 <a href="https://tyroneli.github.io/" style="color:blue;">Jinlong Li</a> ·
 <a href="https://scholar.google.com/citations?user=PID7Z4oAAAAJ" style="color:blue;">Cristiano Saltori</a> ·
