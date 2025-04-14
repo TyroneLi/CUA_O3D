@@ -7,7 +7,7 @@
         <a href="https://scholar.google.com/citations?user=stFCYOAAAAAJ&hl=en" style="color:blue;">Nicu Sebe</a>
     </p>
     <h2 align="center">
-        [⭐️ **CVPR 2025**] [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
+        <a >[⭐️ **CVPR 2025**]<\a> | [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
     </h2>
     <h3 align="center">
         [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![arXiv](https://img.shields.io/badge/arXiv-2503.16707-A42C25?style=flat&logo=arXiv&logoColor=A42C25)](https://arxiv.org/abs/2503.16707) [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://tyroneli.github.io/CUA_O3D/) [![GitHub](https://img.shields.io/badge/GitHub-Code-black?style=flat&logo=github&logoColor=white)](https://github.com/TyroneLi/CUA_O3D) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
