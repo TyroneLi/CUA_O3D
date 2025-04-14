@@ -1,5 +1,9 @@
 # CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding
 
+<a href="https://yunzeman.github.io/" style="color:blue;">Yunze Man</a> ·
+<a href="https://cs.illinois.edu/about/people/department-faculty/lgui" style="color:blue;">Liang-Yan Gui</a> ·
+<a href="https://yxw.web.illinois.edu/" style="color:blue;">Yu-Xiong Wang</a>
+
 <a href="https://tyroneli.github.io/" style="color:blue;">Jinlong Li</a> ·
 <a href="https://scholar.google.com/citations?user=PID7Z4oAAAAJ" style="color:blue;">Cristiano Saltori</a> ·
 <a href=https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a>
