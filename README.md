@@ -1,12 +1,21 @@
-# Official Implementation of “CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding” (CVPR 2025)
+# CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding
+
+<a href="https://tyroneli.github.io/" style="color:blue;">Jinlong Li</a> ·
+<a href="https://scholar.google.com/citations?user=PID7Z4oAAAAJ" style="color:blue;">Cristiano Saltori</a> ·
+<a href=https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a>
+<a href=hhttps://scholar.google.co.uk/citations?user=stFCYOAAAAAJ&hl=en" style="color:blue;">Nicu Sebe</a>
+
+[:star: **CVPR 2025**] [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
+
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![arXiv](https://img.shields.io/badge/arXiv-2406.07544-A42C25?style=flat&logo=arXiv&logoColor=A42C25)](https://arxiv.org/abs/2406.07544) [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://yunzeman.github.io/situation3d/) [![YouTube](https://img.shields.io/badge/YouTube-Video-F83323?style=flat&logo=youtube&logoColor=F83323)](https://www.youtube.com/watch?v=IvjZXOs0Ozo) [![GitHub](https://img.shields.io/badge/GitHub-Code-black?style=flat&logo=github&logoColor=white)](https://github.com/YunzeMan/Situation3D) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+
+This repository contains the official PyTorch implementation of the paper "Situational Awareness Matters in 3D Vision Language Reasoning" (CVPR 2024). The paper is available on [arXiv](https://arxiv.org/abs/2406.07544). The project page is online at [here](https://yunzeman.github.io/situation3d/).
+
 
 <p align="center"><img src="imgs/overview.png" alt="outline" width="70%"></p>
 
 <p align="left"><img src="imgs/method.png" alt="outline" width="95%"></p>
 
-> [Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding (CUA-O3D)](https://tyroneli.github.io/CUA_O3D/) <br>
-> [Jinlong Li](https://tyroneli.github.io), [Cristiano Saltori](https://scholar.google.com/citations?user=PID7Z4oAAAAJ), [Fabio Poiesi](https://fabiopoiesi.github.io/), [Nicu Sebe](https://scholar.google.co.uk/citations?user=stFCYOAAAAAJ&hl=en). <br>
-> :star: **CVPR 2025**
 
 ## About CUA-O3D
 The lack of a large-scale 3D-text corpus has led recent works to distill open-vocabulary knowledge from vision-language models (VLMs). However, these methods typically rely on a single VLM to align the feature spaces of 3D models within a common language space, which limits the potential of 3D models to leverage the diverse spatial and semantic capabilities encapsulated in various foundation models. In this paper, we propose Cross-modal and Uncertainty-aware Agglomeration for Open-vocabulary 3D Scene Understanding dubbed CUA-O3D, the first model to integrate multiple foundation models—such as CLIP, DINOv2, and Stable Diffusion—into 3D scene understanding. We further introduce a deterministic uncertainty estimation to adaptively distill and harmonize the heterogeneous 2D feature embeddings from these models. Our method addresses two key challenges: (1) incorporating semantic priors from VLMs alongside the geometric knowledge of spatially-aware vision foundation models, and (2) using a novel deterministic uncertainty estimation to capture model-specific uncertainties across diverse semantic and geometric sensitivities, helping to reconcile heterogeneous representations during training. Extensive experiments on ScanNetV2 and Matterport3D demonstrate that our method not only advances open-vocabulary segmentation but also achieves robust cross-domain alignment and competitive spatial perception capabilities so as to provide state-of-the-art performance in tasks such as:
