@@ -2,7 +2,7 @@
 
 <a href="https://tyroneli.github.io/" style="color:blue;">Jinlong Li</a> ·
 <a href="https://scholar.google.com/citations?user=PID7Z4oAAAAJ" style="color:blue;">Cristiano Saltori</a> ·
-<a href="https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a>
+<a href="https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a> ·
 <a href="https://scholar.google.com/citations?user=stFCYOAAAAAJ&hl=en" style="color:blue;">Nicu Sebe</a>
 
 [:star: **CVPR 2025**] [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
