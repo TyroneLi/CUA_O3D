@@ -94,7 +94,7 @@ The following installation suppose `python=3.8` `pytorch=1.7.1` and `cuda=11.x`.
     cd data/scannet/
     python batch_load_scannet_data.py
 
-    ## 2D feature embedding extraction
+## 2D feature embedding extraction
 
     We evaluate the method while training.
 
