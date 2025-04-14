@@ -30,7 +30,7 @@ Visit the [CUA-O3D website](https://tyroneli.github.io/CUA_O3D) to explore more 
 - [X] 2D feature extraction release
 - [ ] distillation training release
 
-## Installation
+## 1. Installation
 
 Requirements
 
@@ -72,7 +72,7 @@ The following installation suppose `python=3.8` `pytorch=1.7.1` and `cuda=11.x`.
      python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
      ```
 
-## Data Preparation
+## 2. Data Preparation
 
 ### ScanNet v2 dataset
 
@@ -95,7 +95,7 @@ cd data/scannet/
 python batch_load_scannet_data.py
 ```
 
-## 2D feature embedding extraction
+## 3. 2D feature embedding extraction
 
 We evaluate the method while training.
 
@@ -103,7 +103,7 @@ We evaluate the method while training.
 sh scripts/train.sh
 ```
 
-## 3D distillation training
+## 4. 3D distillation training
 
 We evaluate the method while training.
 
@@ -111,7 +111,7 @@ We evaluate the method while training.
 sh scripts/train.sh
 ```
 
-## Evaluation
+## 5. Evaluation
 
 We evaluate the method while training.
 
