@@ -72,22 +72,52 @@ The following installation suppose `python=3.8` `pytorch=1.7.1` and `cuda=11.x`.
      python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
      ```
 
+## Data Preparation
 
+### ScanNet v2 dataset
 
+Download the [ScanNet](http://www.scan-net.org/) v2 dataset.
 
-## Acknowledgments
-We extend our gratitude to all contributors and supporters of the CUA-O3D project. Your valuable insights and contributions drive innovation and progress in the field of **3D and language-based AI systems**.
+Put the downloaded `scans` and `scans_test` folder as follows.
 
-## Contact
-For questions, issues, or collaboration opportunities:
-- Submit a ticket on the [issues page](https://github.com/tyroneli/CUA-O3D/issues).
-- Visit the [CUA-O3D project website](https://tyroneli.github.io/CUA_O3D/).
-- Alternatively, reach out via email: [jinlong.li@unitn.it](mailto:jinlong.li@unitn.it).
+```
+CUA_O3D
+├── data
+│   ├── scannet
+│   │   ├── scans
+│   │   ├── scans_test
+```
 
-## Quick Links
-- [CUA-O3D Website](https://tyroneli.github.io/CUA-O3D/)
-- [CUA-O3D Code Repository](https://github.com/tyroneli/CUA-O3D)
-- [CUA-O3D Paper on arXiv](https://arxiv.org/abs/2411.19774)
+Pre-process ScanNet data
+
+```
+cd data/scannet/
+python batch_load_scannet_data.py
+
+## 2D feature embedding extraction
+
+We evaluate the method while training.
+
+```
+sh scripts/train.sh
+```
+
+## 3D distillation training
+
+We evaluate the method while training.
+
+```
+sh scripts/train.sh
+```
+
+## Evaluation
+
+We evaluate the method while training.
+
+```
+sh scripts/train.sh
+```
+
 
 ## BibTeX
 If you use our work in your research, please cite our publication:
@@ -100,6 +130,8 @@ If you use our work in your research, please cite our publication:
         }
 ```
 
+## Acknowledgments
+We extend our gratitude to all contributors and supporters of the CUA-O3D project. Your valuable insights and contributions drive innovation and progress in the field of **3D and language-based AI systems**.
 
 ## Website License
 
