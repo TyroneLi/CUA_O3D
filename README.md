@@ -6,12 +6,11 @@
         <a href="https://fabiopoiesi.github.io/" style="color:blue;">Fabio Poiesi</a> ·
         <a href="https://scholar.google.com/citations?user=stFCYOAAAAAJ&hl=en" style="color:blue;">Nicu Sebe</a>
     </p>
-    <h2 align="center">
-        <a >[⭐️ **CVPR 2025**]<\a> | [[`Project Page`](https://tyroneli.github.io/CUA_O3D/)] [[`arXiv`](https://arxiv.org/abs/2503.16707)] [[`BibTeX`](#BibTex)]
-    </h2>
+    <h2 align="center">CVPR 2025</h2>
     <h3 align="center">
-        [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/) [![arXiv](https://img.shields.io/badge/arXiv-2503.16707-A42C25?style=flat&logo=arXiv&logoColor=A42C25)](https://arxiv.org/abs/2503.16707) [![Project](https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=green)](https://tyroneli.github.io/CUA_O3D/) [![GitHub](https://img.shields.io/badge/GitHub-Code-black?style=flat&logo=github&logoColor=white)](https://github.com/TyroneLi/CUA_O3D) [![License](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+        <a href="https://arxiv.org/abs/2503.16707">Paper</a> | <a href="https://tyroneli.github.io/CUA_O3D/">Project Page</a>
     </h3>
+    <div align="center"></div>
 </p>
 <p align="center">
 This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on [arXiv](https://arxiv.org/abs/2503.16707). The project page is online at [here](https://tyroneli.github.io/CUA_O3D/).
