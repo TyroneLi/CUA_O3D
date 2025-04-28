@@ -14,7 +14,7 @@
 </p>
 
 <p align="left">
-This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on [arXiv](https://arxiv.org/abs/2503.16707). The project page is online at [here](https://tyroneli.github.io/CUA_O3D/).
+This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on <a href="(https://arxiv.org/abs/2503.16707">[arxiv]]</a>. The project page is online at <a href="https://tyroneli.github.io/CUA_O3D/">CUA-O3D</a>.
 </p>
 <br>
 
@@ -34,7 +34,8 @@ Visit the [CUA-O3D website](https://tyroneli.github.io/CUA_O3D) to explore more 
 
 ## Todo List
 - [X] 2D feature extraction release
-- [ ] distillation training release
+- [X] distillation training release
+- [X] linear probing training release
 
 ## 1. Installation
 
@@ -101,7 +102,7 @@ cd 2D_feature_extraction/
 
 ```
 
-## 3. 2D feature embedding extraction
+## 3. 2D Feature Embedding Extraction
 
   (1) For LSeg feature extraction and projection
   ```
@@ -133,11 +134,11 @@ cd 2D_feature_extraction/
       --process_id_range 0,1600
   ```
 After that, specify the corresponding 2D projection embedding path to the config:
-https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L3
-https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L4
-https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L5
+<a href="https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L3">data_root_2d_fused_feature</a> 
+<a href="https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L4">data_root_2d_fused_feature_dinov2</a> 
+<a href="https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L5">data_root_2d_fused_feature_sd</a> 
 
-## 4. 3D distillation training
+## 4. 3D Distillation Training
 
 Perform Distillation Training
 ```
@@ -146,39 +147,63 @@ bash run/distill_with_dinov2_sd_adaptiveWeightLoss_demean.sh \
     config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml
 ```
 
-## 5. Evaluation
+## 5. 3D Evaluation
 
-Perform 2D Fusion Evaluation
+(1) Perform 2D Fusion Evaluation
 ```
 sh run/evaluate_with_dinov2_sd.py \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
-Perform 2D Distillation Evaluation
+(2) Perform 2D Distillation Evaluation
 ```
 sh run/evaluate_with_dinov2_sd.py \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
-Perform 2D Ensemble Evaluation
+(3) Perform 2D Ensemble Evaluation
 ```
 sh run/evaluate_with_dinov2_sd.py \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
-
+## 5. 3D Linear Probing
+(1) Concatenate Lseg, DINOv2 and SD to perform linear probing
+```
+sh run/distill_cat_prob_seg_all.sh \
+  config_CUA_O3D/scannet/ours_lseg_ep20_seg.yaml \
+  <best_model_saved_path_from_distillation_training>
+```
+(1) Lseg head to perform linear probing
+```
+sh run/distill_sep_prob_seg_Lseg.sh \
+  config_CUA_O3D/scannet/ours_lseg_ep20_seg.yaml \
+  <best_model_saved_path_from_distillation_training>
+```
+(1) DINOv2 head to perform linear probing
+```
+sh run/distill_sep_prob_seg_DINOv2.sh \
+  config_CUA_O3D/scannet/ours_lseg_ep20_seg.yaml \
+  <best_model_saved_path_from_distillation_training>
+```
+(1) SD head to perform linear probing
+```
+sh run/distill_sep_prob_seg_SD.sh \
+  config_CUA_O3D/scannet/ours_lseg_ep20_seg.yaml \
+  <best_model_saved_path_from_distillation_training>
+```
 
 ## BibTeX
 If you use our work in your research, please cite our publication:
 ```bibtex
 @article{li2025cross,
-    title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
-    author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
-    journal={arXiv preprint arXiv:2503.16707},
-    year={2025}
+  title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
+  author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
+  journal={arXiv preprint arXiv:2503.16707},
+  year={2025}
 }
 ```
 
