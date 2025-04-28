@@ -14,7 +14,7 @@
 </p>
 
 <p align="left">
-This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on <a href="https://arxiv.org/abs/2503.16707">[arxiv]</a>. The project page is online at <a href="https://tyroneli.github.io/CUA_O3D/">CUA-O3D</a>.
+This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on <a href="https://arxiv.org/abs/2503.16707">Arxiv</a>. The project page is online at <a href="https://tyroneli.github.io/CUA_O3D/">CUA-O3D</a>.
 </p>
 <br>
 
@@ -170,7 +170,34 @@ sh run/evaluate_with_dinov2_sd.py \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
-## 5. 3D Linear Probing
+
+## 6. Cross-dataset Generalization
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/matterport/test_21classes.yaml \
+  ensemble
+```
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/matterport/test_40classes.yaml \
+  ensemble
+```
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/matterport/test_80classes.yaml \
+  ensemble
+```
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/matterport/test_160classes.yaml \
+  ensemble
+```
+
+## 7. 3D Linear Probing
 (1) Concatenate Lseg, DINOv2 and SD to perform linear probing
 ```
 sh run/distill_cat_prob_seg_all.sh \
