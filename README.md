@@ -103,26 +103,71 @@ cd 2D_feature_extraction/
 
 ## 3. 2D feature embedding extraction
 
-We evaluate the method while training.
+  (1) For LSeg feature extraction and projection
+  ```
+  CUDA_VISIBLE_DEVICES=0 python 2D_feature_extraction/embedding_projection/fusion_scannet_lseg.py \
+      --data_dir <ScanNetV2_save_path> \
+      --output_dir <save_path_for_lseg_projection_embeddings> \
+      --save_aligned False \
+      --split train \
+      --process_id_range 0,1600
+  ```
 
-```
-sh scripts/train.sh
-```
+  (2) For DINOv2 feature extraction and projection
+  ```
+  CUDA_VISIBLE_DEVICES=0 python 2D_feature_extraction/embedding_projection/fusion_scannet_dinov2.py \
+      --data_dir <ScanNetV2_save_path> \
+      --output_dir <save_path_for_DINOv2_projection_embeddings> \
+      --save_aligned False \
+      --split train \
+      --process_id_range 0,1600
+  ```
+
+  (3) For Stable Diffusion (SD) feature extraction and projection
+  ```
+  CUDA_VISIBLE_DEVICES=0 python 2D_feature_extraction/embedding_projection/fusion_scannet_sd.py \
+      --data_dir <ScanNetV2_save_path> \
+      --output_dir <save_path_for_SD_projection_embeddings> \
+      --save_aligned False \
+      --split train \
+      --process_id_range 0,1600
+  ```
+After that, specify the corresponding 2D projection embedding path to the config:
+https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L3
+https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L4
+https://github.com/TyroneLi/CUA_O3D/blob/main/config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml#L5
 
 ## 4. 3D distillation training
 
-We evaluate the method while training.
-
+Perform Distillation Training
 ```
-sh scripts/train.sh
+bash run/distill_with_dinov2_sd_adaptiveWeightLoss_demean.sh \
+    training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+    config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml
 ```
 
 ## 5. Evaluation
 
-We evaluate the method while training.
-
+Perform 2D Fusion Evaluation
 ```
-sh scripts/train.sh
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
+  fusion
+```
+Perform 2D Distillation Evaluation
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
+  fusion
+```
+Perform 2D Ensemble Evaluation
+```
+sh run/evaluate_with_dinov2_sd.py \
+  training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
+  config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
+  fusion
 ```
 
 
