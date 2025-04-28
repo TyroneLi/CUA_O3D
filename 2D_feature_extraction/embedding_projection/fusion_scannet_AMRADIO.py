@@ -13,9 +13,6 @@ sys.path.append('..')
 from torch.nn import functional as F
 from torchvision.transforms.functional import pil_to_tensor
 from PIL import Image
-
-from models import LSeg_MultiEvalModule
-from modules.lseg_module import LSegModule
 from encoding.models.sseg import BaseNet
 import torchvision.transforms as transforms
 
@@ -104,7 +101,8 @@ def process_one_scene(data_path, out_dir, args):
         # calculate the 3d-2d mapping based on the depth
         mapping = np.ones([n_points, 4], dtype=int)
         mapping[:, 1:4] = point2img_mapper.compute_mapping(pose, locs_in, depth)
-        if mapping[:, 3].sum() == 0: # no points corresponds to this image, skip
+        if mapping[:, 3].sum() == 0:
+            # no points corresponds to this image, skip
             continue
 
         mapping = torch.from_numpy(mapping).to(device)
@@ -155,11 +153,14 @@ def main(args):
     mx=319.5
     my=239.5
     #######################################
-    visibility_threshold = 0.25 # threshold for the visibility check
+    # threshold for the visibility check
+    visibility_threshold = 0.25
 
     args.depth_scale = depth_scale
-    args.cut_num_pixel_boundary = 10 # do not use the features on the image boundary
-    args.keep_features_in_memory = False # keep image features in the memory, very expensive
+    # do not use the features on the image boundary
+    args.cut_num_pixel_boundary = 10
+    # keep image features in the memory, very expensive
+    args.keep_features_in_memory = False
 
     split = args.split
     data_dir = args.data_dir
@@ -172,10 +173,12 @@ def main(args):
     os.makedirs(out_dir, exist_ok=True)
     process_id_range = args.process_id_range
 
-    if split== 'train': # for training set, export a chunk of point cloud
+    # for training set, export a chunk of point cloud
+    if split== 'train':
         args.n_split_points = 300000
         args.num_rand_file_per_scene = 5
-    else: # for the validation set, export the entire point cloud instead of chunks
+    else:
+        # for the validation set, export the entire point cloud instead of chunks
         args.n_split_points = 2000000
         args.num_rand_file_per_scene = 1
 

@@ -97,7 +97,8 @@ def process_one_scene(data_path, out_dir, args):
         # calculate the 3d-2d mapping based on the depth
         mapping = np.ones([n_points, 4], dtype=int)
         mapping[:, 1:4] = point2img_mapper.compute_mapping(pose, locs_in, depth)
-        if mapping[:, 3].sum() == 0: # no points corresponds to this image, skip
+        if mapping[:, 3].sum() == 0:
+            # no points corresponds to this image, skip
             continue
 
         mapping = torch.from_numpy(mapping).to(device)
@@ -143,10 +144,12 @@ def main(args):
     transforms_mean = [0.48145466, 0.4578275, 0.40821073]
     transforms_std = [0.26862954, 0.26130258, 0.27577711]
     #######################################
-    visibility_threshold = 0.25 # threshold for the visibility check
+    # threshold for the visibility check
+    visibility_threshold = 0.25
 
     args.depth_scale = depth_scale
-    args.cut_num_pixel_boundary = 10 # do not use the features on the image boundary
+    # do not use the features on the image boundary
+    args.cut_num_pixel_boundary = 10
 
     split = args.split
     data_dir = args.data_dir
@@ -155,14 +158,17 @@ def main(args):
     data_root_2d = join(data_dir,'scannet_2d')
     args.data_root_2d = data_root_2d
     out_dir = args.output_dir
-    args.feat_dim = 1024 # 512 CLIP feature dimension, 768/1024 DINOv2 feature dimension
+    # 512 CLIP feature dimension, 768/1024 DINOv2 feature dimension
+    args.feat_dim = 1024
     os.makedirs(out_dir, exist_ok=True)
     process_id_range = args.process_id_range
 
-    if split== 'train': # for training set, export a chunk of point cloud
+    if split== 'train':
+        # for training set, export a chunk of point cloud
         args.n_split_points = 300000
         args.num_rand_file_per_scene = 5
-    else: # for the validation set, export the entire point cloud instead of chunks
+    else:
+        # for the validation set, export the entire point cloud instead of chunks
         args.n_split_points = 2000000
         args.num_rand_file_per_scene = 1
 

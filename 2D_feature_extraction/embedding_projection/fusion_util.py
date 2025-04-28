@@ -225,7 +225,8 @@ def sameAs_save_fused_feature(feat_bank, point_ids, n_points, out_dir, scene_id,
         else:
             n_points_cur = args.n_split_points
         
-        # TODO: 
+        # TODO:
+        # extract the same point indices or positions as original Lseg/OpenSeg point features 
         # need to modify as personal path
         # previous_path = "/leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg"
         previous_path = "/mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding"
@@ -250,6 +251,7 @@ def sameAs_save_fused_feature_scannet(feat_bank, point_ids, n_points, out_dir, s
             n_points_cur = args.n_split_points
 
         # TODO: 
+        # extract the same point indices or positions as original Lseg/OpenSeg point features
         # need to modify as personal path
         previous_path = "/leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg"
         # previous_path = "/nfs/datasets/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
@@ -276,6 +278,7 @@ def sameAs_save_fused_feature_matterport(feat_bank, point_ids, n_points, out_dir
             n_points_cur = args.n_split_points
 
         # TODO: 
+        # extract the same point indices or positions as original Lseg/OpenSeg point features
         # need to modify as personal path
         # previous_path = "/leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_matterport_lseg"
         # previous_path = "/nfs/datasets/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
