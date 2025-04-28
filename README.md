@@ -14,7 +14,7 @@
 </p>
 
 <p align="left">
-This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on <a href="(https://arxiv.org/abs/2503.16707">[arxiv]</a>. The project page is online at <a href="https://tyroneli.github.io/CUA_O3D/">CUA-O3D</a>.
+This repository contains the official PyTorch implementation of the paper "CUA-O3D: Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding" (CVPR 205). The paper is available on <a href="https://arxiv.org/abs/2503.16707">[arxiv]</a>. The project page is online at <a href="https://tyroneli.github.io/CUA_O3D/">CUA-O3D</a>.
 </p>
 <br>
 
