@@ -226,10 +226,11 @@ sh run/distill_sep_prob_seg_SD.sh \
 ## BibTeX
 If you use our work in your research, please cite our publication:
 ```bibtex
-@article{li2025cross,
-  title={Cross-Modal and Uncertainty-Aware Agglomeration for Open-Vocabulary 3D Scene Understanding},
+@inproceedings{li2025cross,
+  title={Cross-modal and uncertainty-aware agglomeration for open-vocabulary 3d scene understanding},
   author={Li, Jinlong and Saltori, Cristiano and Poiesi, Fabio and Sebe, Nicu},
-  journal={arXiv preprint arXiv:2503.16707},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={19390--19400},
   year={2025}
 }
 ```
