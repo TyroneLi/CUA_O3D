@@ -241,7 +241,7 @@ def sameAs_save_fused_feature(feat_bank, point_ids, n_points, out_dir, scene_id,
         },  os.path.join(out_dir, scene_id +'_%d.pt'%(n)))
         print(os.path.join(out_dir, scene_id +'_%d.pt'%(n)) + ' is saved!')
 
-def sameAs_save_fused_feature_scannet(feat_bank, point_ids, n_points, out_dir, scene_id, args):
+def sameAs_save_fused_feature_scannet(feat_bank, point_ids, n_points, out_dir, scene_id, args, previous_path=None):
     '''Save features.'''
 
     for n in range(args.num_rand_file_per_scene):
@@ -251,21 +251,37 @@ def sameAs_save_fused_feature_scannet(feat_bank, point_ids, n_points, out_dir, s
             n_points_cur = args.n_split_points
 
         # TODO: 
-        # extract the same point indices or positions as original Lseg/OpenSeg point features
-        # need to modify as personal path
-        previous_path = "/leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg"
-        # previous_path = "/nfs/datasets/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
-        # previous_path = "/mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
-        # previous_path = "/mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/re_my_extraction_scannet_lseg"
-        
-        previous_full_path = os.path.join(previous_path, scene_id +'_%d.pt'%(n))
-        assert os.path.exists(previous_full_path)
-        mask_entire = torch.load(previous_full_path)['mask_full']
-        
-        
-        torch.save({"feat": feat_bank[mask_entire].half().cpu(),
-                    "mask_full": mask_entire
-        },  os.path.join(out_dir, scene_id +'_%d.pt'%(n)))
+        if not previous_path:
+            # extract the same point indices or positions as original Lseg/OpenSeg point features
+            # need to modify as personal path
+            previous_path = "/leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg"
+            # previous_path = "/nfs/datasets/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
+            # previous_path = "/mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/my_reExtract_matterport_lseg"
+            # previous_path = "/mhug/mhug-dataset/jinlong_li_datasets/data_from_yoda_2d_embedding/re_my_extraction_scannet_lseg"
+            
+            previous_full_path = os.path.join(previous_path, scene_id +'_%d.pt'%(n))
+            assert os.path.exists(previous_full_path)
+            mask_entire = torch.load(previous_full_path)['mask_full']
+            
+            
+            torch.save({"feat": feat_bank[mask_entire].half().cpu(),
+                        "mask_full": mask_entire
+            },  os.path.join(out_dir, scene_id +'_%d.pt'%(n)))
+            
+        else:
+
+            rand_ind = np.random.choice(range(n_points), n_points_cur, replace=False)
+
+            mask_entire = torch.zeros(n_points, dtype=torch.bool)
+            mask_entire[rand_ind] = True
+            mask = torch.zeros(n_points, dtype=torch.bool)
+            mask[point_ids] = True
+            mask_entire = mask_entire & mask
+
+            torch.save({"feat": feat_bank[mask_entire].half().cpu(),
+                        "mask_full": mask_entire
+            },  os.path.join(out_dir, scene_id +'_%d.pt'%(n)))
+            
         print(os.path.join(out_dir, scene_id +'_%d.pt'%(n)) + ' is saved!')
 
 def sameAs_save_fused_feature_matterport(feat_bank, point_ids, n_points, out_dir, scene_id, args):

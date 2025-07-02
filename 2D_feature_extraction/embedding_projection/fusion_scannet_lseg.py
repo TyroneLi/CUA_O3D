@@ -123,7 +123,8 @@ def process_one_scene(data_path, out_dir, args):
     point_ids = torch.unique(vis_id.nonzero(as_tuple=False)[:, 0])
 
     sameAs_save_fused_feature_scannet(feat_bank, point_ids, n_points, out_dir, scene_id, args)
-
+    # # or at the first time to extract the 2D multi-view embedding from Lseg use this calling:
+    # save_fused_feature(feat_bank, point_ids, n_points, out_dir, scene_id, args)
 
 def main(args):   
     seed = 1457

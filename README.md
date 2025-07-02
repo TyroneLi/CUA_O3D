@@ -114,6 +114,8 @@ cd 2D_feature_extraction/
       --process_id_range 0,1600
   ```
 
+  We recommend to first extract the 2D multi-view feature embeddings from Lseg model first without specifying the previous projected point mask index, then you need to specify the first 2D model's projected mask index so as to maintain the consistent point mask index during the training.
+
   (2) For DINOv2 feature extraction and projection
   ```
   CUDA_VISIBLE_DEVICES=0 python 2D_feature_extraction/embedding_projection/fusion_scannet_dinov2.py \
