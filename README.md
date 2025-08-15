@@ -153,21 +153,21 @@ bash run/distill_with_dinov2_sd_adaptiveWeightLoss_demean.sh \
 
 (1) Perform 2D Fusion Evaluation
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
 (2) Perform 2D Distillation Evaluation
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
 ```
 (3) Perform 2D Ensemble Evaluation
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
   fusion
@@ -175,25 +175,25 @@ sh run/evaluate_with_dinov2_sd.py \
 
 ## 6. Cross-dataset Generalization
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/matterport/test_21classes.yaml \
   ensemble
 ```
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/matterport/test_40classes.yaml \
   ensemble
 ```
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/matterport/test_80classes.yaml \
   ensemble
 ```
 ```
-sh run/evaluate_with_dinov2_sd.py \
+sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/matterport/test_160classes.yaml \
   ensemble

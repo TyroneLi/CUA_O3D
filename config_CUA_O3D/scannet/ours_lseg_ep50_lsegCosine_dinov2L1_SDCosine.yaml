@@ -1,6 +1,6 @@
 DATA:
-  data_root: /leonardo_work/IscrC_bal/OV3D/datas/scannet_3d
-  data_root_2d_fused_feature: /leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_scannet_lseg
+  data_root: /leonardo_work/IscrC_EEOL_0/openscene_save_files/data/scannet_3d
+  data_root_2d_fused_feature: /leonardo_scratch/fast/IscrC_EEOL_0/my_reExtract_scannet_lseg
   data_root_2d_fused_feature_dinov2: /leonardo_work/IscrC_OVUD/another_lexicon_3d_feats_path/dinov2_not_aligned_sameAsOld
   data_root_2d_fused_feature_sd: /leonardo_work/IscrC_GMAM/lijinlong_openSet_3D_datas/lexicon_3d_feats/sd_not_aligned_sameAsOld
   feature_2d_extractor: lseg

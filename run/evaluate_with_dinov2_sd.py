@@ -20,7 +20,7 @@ from util import config
 from util.util import export_pointcloud, get_palette, \
     convert_labels_with_palette, extract_text_feature, visualize_labels
 from tqdm import tqdm
-from run.distill_with_dinov2_sd import get_model
+from run.distill_with_dinov2_sd_demean import get_model
 
 from dataset.label_constants import *
 
@@ -256,14 +256,10 @@ def evaluate(model, val_data_loader, labelset_name='scannet_3d'):
 
     text_features, labelset, mapper, palette = \
         precompute_text_related_properties(labelset_name)
-
-    # import pdb;pdb.set_trace()
     
     with torch.no_grad():
         model.eval()
         store = 0.0
-        
-        brier_scores = []
         
         for rep_i in range(args.test_repeats):
             preds, gts = [], []
@@ -298,15 +294,13 @@ def evaluate(model, val_data_loader, labelset_name='scannet_3d'):
                     pred = predictions.half() @ text_features.t()
                     logits_pred = torch.max(pred, 1)[1].cpu()
                     
-                    # import pdb;pdb.set_trace()
-                    
                 elif feature_type == 'fusion':
                     predictions = feat_3d.cuda(non_blocking=True)[inds_reverse, :]
                     pred = predictions.half() @ text_features.t()
                     logits_pred = torch.max(pred, 1)[1].detach().cpu()
                     if mark_no_feature_to_unknown:
-                    # some points do not have 2D features from 2D feature fusion.
-                    # Directly assign 'unknown' label to those points during inference.
+                        # some points do not have 2D features from 2D feature fusion.
+                        # Directly assign 'unknown' label to those points during inference.
                         logits_pred[~mask[inds_reverse]] = len(labelset)-1
 
                 elif feature_type == 'ensemble':
@@ -440,37 +434,10 @@ def evaluate(model, val_data_loader, labelset_name='scannet_3d'):
                     if mark_no_feature_to_unknown:
                         store_logit[~mask] = 256
                     
-                    # #########compute Brier Score#########
-                    # # import pdb;pdb.set_trace()
-                    # tmp_store = store.float()
-                    # tmp_store = torch.where(tmp_store == float('inf'), 10000000, tmp_store.long())
-                    # probs = tmp_store.float().softmax(dim=1)
-                    # # probs = store.float().softmax(dim=1)
-                    # new_label = gt.clone()
-                    # mask_255 = (gt == 255)
-                    # new_label[new_label == 255] = 0
-                    # # onehot_new_label = torch.nn.functional.one_hot(new_label, 20)
-                    # onehot_new_label = torch.nn.functional.one_hot(new_label, args.classes)
-                    # mse_loss = torch.nn.functional.mse_loss(probs, onehot_new_label, reduction='none')
-                    # mse_loss = mse_loss[~mask_255]
-                    # brier_score = mse_loss.mean()
-                    # print("brier score : {:.6f}".format(brier_score))
-                    # brier_scores.append(brier_score)
-                    # # import pdb;pdb.set_trace()
-                    # ####################################
-                    
                     accumu_iou = metric.evaluate(store_logit.numpy(),
                                                 gt.numpy(),
                                                 stdout=True,
                                                 dataset=labelset_name)
-            
-        # print("brier scores : {:.6} -> {:.6} -> {:.6} -> {:.6} -> {:.6}".format(
-        #     brier_scores[0],
-        #     brier_scores[1],
-        #     brier_scores[2],
-        #     brier_scores[3],
-        #     brier_scores[4]
-        # ))
             
 if __name__ == '__main__':
     main()
