@@ -50,7 +50,7 @@ class MinkUNetBase(ResNetBase):
         self.out_channels_sd = out_channels_sd
         self.out_channels_amradio = out_channels_amradio
         
-        self.seg_cls = 21
+        self.seg_cls = 20
         
         ResNetBase.__init__(self, in_channels, out_channels, D)
 
@@ -141,19 +141,26 @@ class MinkUNetBase(ResNetBase):
             # has_bias=True,
             dimension=D)
         
-        self.final_amradio = ME.MinkowskiConvolution(
-            self.PLANES[7],
-            self.out_channels_amradio,
-            kernel_size=1,
-            # has_bias=True,
-            dimension=D)
-        
         self.final_seg = ME.MinkowskiConvolution(
-            out_channels + self.out_channels_dinov2 + self.out_channels_sd + self.out_channels_amradio,
+            out_channels + self.out_channels_dinov2 + self.out_channels_sd,
             self.seg_cls,
             kernel_size=1,
             # has_bias=True,
             dimension=D)
+        
+        # self.final_amradio = ME.MinkowskiConvolution(
+        #     self.PLANES[7],
+        #     self.out_channels_amradio,
+        #     kernel_size=1,
+        #     # has_bias=True,
+        #     dimension=D)
+        
+        # self.final_seg = ME.MinkowskiConvolution(
+        #     out_channels + self.out_channels_dinov2 + self.out_channels_sd + self.out_channels_amradio,
+        #     self.seg_cls,
+        #     kernel_size=1,
+        #     # has_bias=True,
+        #     dimension=D)
         
         self.relu = ME.MinkowskiReLU(inplace=True)
 
@@ -218,9 +225,10 @@ class MinkUNetBase(ResNetBase):
         out_language_seg = self.final(out)
         out_dinov2 = self.final_dinov2(out)
         out_sd = self.final_sd(out)
-        out_amradio = self.final_amradio(out)
+        # out_amradio = self.final_amradio(out)
         
-        out_seg = ME.cat(out_language_seg, out_dinov2, out_sd, out_amradio)
+        # out_seg = ME.cat(out_language_seg, out_dinov2, out_sd, out_amradio)
+        out_seg = ME.cat(out_language_seg, out_dinov2, out_sd)
         
         out_seg = self.final_seg(out_seg).F
         

@@ -22,11 +22,11 @@ from util.util import export_pointcloud, get_palette, \
 from tqdm import tqdm
 from dataset.point_loader import Point3DLoader, collation_fn_eval_all
 # from run.distill_cat_prob_seg import get_model
-from run.distill_sep_prob_seg import get_model
+# from run.distill_sep_prob_seg import get_model
 # from run.distill_sep_prob_seg_Lseg import get_model
 # from run.distill_sep_prob_seg_DINOv2 import get_model
-# from run.distill_sep_prob_seg_SD import get_model
-from run.distill_cat_prob_seg_all import get_model
+from run.distill_sep_prob_seg_SD import get_model
+# from run.distill_cat_prob_seg_all import get_model
 
 from dataset.label_constants import *
 
