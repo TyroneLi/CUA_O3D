@@ -365,29 +365,15 @@ def distill(train_loader, model, optimizer, epoch):
         else:
             raise NotImplementedError
         
-        # if hasattr(args, 'loss_sd_type') and args.loss_type == 'cosine':
-        #     loss_sd = (1 - torch.nn.CosineSimilarity()
-        #             (output_3d_sd, sd_feat_3d)).mean()
-        # elif hasattr(args, 'loss_sd_type') and args.loss_type == 'l1':
-        #     loss_sd = torch.nn.L1Loss()(output_3d_sd, sd_feat_3d)
-        # elif hasattr(args, 'loss_sd_type') and args.loss_type == 'l2':
-        #     loss_sd = torch.nn.MSELoss()(output_3d_sd.float(), sd_feat_3d.float())
-        # else:
-        #     raise NotImplementedError
-        
         if hasattr(args, 'loss_sd_type') and args.loss_type == 'cosine':
-            # loss_sd = (1 - torch.nn.CosineSimilarity()
-            #         (F.normalize(output_3d_sd, 2, dim=1), F.normalize(sd_feat_3d, 2, dim=1))).mean()
             loss_sd = (1 - torch.nn.CosineSimilarity()(
                 F.normalize(output_3d_sd, 2, dim=1), 
                 F.normalize(demean_func(sd_feat_3d), 2, dim=1))).mean()
         elif hasattr(args, 'loss_sd_type') and args.loss_type == 'l1':
-            # loss_sd = torch.nn.L1Loss()(F.normalize(output_3d_sd, 2, dim=1), F.normalize(sd_feat_3d, 2, dim=1))
             loss_sd = torch.nn.L1Loss()(
                 F.normalize(output_3d_sd, 2, dim=1), 
                 F.normalize(demean_func(sd_feat_3d), 2, dim=1))
         elif hasattr(args, 'loss_sd_type') and args.loss_type == 'l2':
-            # loss_sd = torch.nn.MSELoss()(F.normalize(output_3d_sd, 2, dim=1), F.normalize(sd_feat_3d.float(), 2, dim=1))
             loss_sd = torch.nn.MSELoss()(
                 F.normalize(output_3d_sd, 2, dim=1), 
                 F.normalize(demean_func(sd_feat_3d.float()), 2, dim=1))

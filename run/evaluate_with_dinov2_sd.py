@@ -319,14 +319,14 @@ def evaluate(model, val_data_loader, labelset_name='scannet_3d'):
                     # pred[mask_ensem] = pred_fusion[mask_ensem]
                     # logits_pred = torch.max(pred, 1)[1].detach().cpu()
 
-                    feat_ensemble = predictions.clone().half()
-                    mask_ =  pred_distill.max(dim=-1)[0] < pred_fusion.max(dim=-1)[0]
-                    feat_ensemble[mask_] = feat_fuse[mask_]
+                    # feat_ensemble = predictions.clone().half()
+                    # mask_ =  pred_distill.max(dim=-1)[0] < pred_fusion.max(dim=-1)[0]
+                    # feat_ensemble[mask_] = feat_fuse[mask_]
                     
                     # import pdb;pdb.set_trace()
                     
-                    # feat_ensemble = predictions.clone().half()
-                    # feat_ensemble = (feat_ensemble + feat_fuse) / 2.0
+                    feat_ensemble = predictions.clone().half()
+                    feat_ensemble = (feat_ensemble + feat_fuse) / 2.0
                     
                     pred = feat_ensemble @ text_features.t()
                     logits_pred = torch.max(pred, 1)[1].detach().cpu()
