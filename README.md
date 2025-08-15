@@ -163,14 +163,14 @@ sh run/eval_with_dinov2_sd.sh \
 sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
-  fusion
+  distill
 ```
 (3) Perform 2D Ensemble Evaluation
 ```
 sh run/eval_with_dinov2_sd.sh \
   training_testing_logs/CUA_O3D_LSeg_DINOv2_SD \
   config_CUA_O3D/scannet/ours_lseg_ep50_lsegCosine_dinov2L1_SDCosine.yaml \
-  fusion
+  ensemble
 ```
 
 ## 6. Cross-dataset Generalization

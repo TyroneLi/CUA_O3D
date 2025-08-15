@@ -1,8 +1,8 @@
 DATA:
   # data_root: data/matterport_3d
   # data_root_2d_fused_feature: data/matterport_multiview_openseg_test
-  data_root: /leonardo_work/IscrC_bal/OV3D/datas/matterport_3d
-  data_root_2d_fused_feature: /leonardo_work/IscrC_bal/OV3D/datas/my_reExtract_matterport_lseg
+  data_root: /leonardo_work/IscrC_EEOL_0/openscene_save_files/data/matterport_3d
+  data_root_2d_fused_feature: /leonardo_scratch/fast/IscrC_EEOL_0/my_reExtract_matterport_lseg
   feature_2d_extractor: lseg
   classes: 21
   voxel_size: 0.02
