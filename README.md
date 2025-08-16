@@ -36,6 +36,7 @@ Visit the [CUA-O3D website](https://tyroneli.github.io/CUA_O3D) to explore more 
 - [X] 2D feature extraction release
 - [X] distillation training release
 - [X] linear probing training release
+- [x] release datas - <a href="https://drive.google.com/drive/folders/19IuSypv6yscbceVNP2VFCL4LTzPqm1Az?usp=sharing">link</a> 
 
 ## 1. Installation
 
